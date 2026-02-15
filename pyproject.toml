@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "code-auditor-lab1"
+version = "0.1.0"
+description = "Lab1 LangGraph project: local code auditor with ReAct, retries, and parallel checks."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langchain>=1.0.0",
+  "langgraph>=1.0.0",
+  "langchain-openai>=1.0.0",
+  "pydantic>=2.7",
+  "tenacity>=9.0.0",
+  "ruff>=0.6.0",
+  "radon>=6.0.1",
+  "jupyter>=1.0.0",
+  "ipykernel>=6.29.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/code_auditor"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
